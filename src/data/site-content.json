@@ -26,9 +26,9 @@
     "ctaSecondary": "Ver servicios"
   },
   "stats": [
-    { "label": "Citas al mes", "value": "+240" },
-    { "label": "Años de estilo", "value": "9" },
-    { "label": "Reviews 5★", "value": "580" }
+    { "label": "Citas al mes", "value": "+50" },
+    { "label": "Años de estilo", "value": "5" },
+    { "label": "Reviews 4★", "value": "100" }
   ],
   "services": [
     {
