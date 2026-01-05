@@ -1,0 +1,144 @@
+{
+  "brand": {
+    "name": "Belleza Estilo YM",
+    "subtitle": "Yelle & Maria",
+    "handle": "@Belleza.Estilo_YM",
+    "phonePretty": "+34 123 456 789",
+    "phoneE164": "34123456789",
+    "instagram": "https://instagram.com/tuusuario",
+    "maps": "https://maps.google.com/?q=Peluquer%C3%ADa%20Belleza%20Estilo%20YM",
+    "mapsEmbed": "https://www.google.com/maps?q=Peluquer%C3%ADa%20Belleza%20Estilo%20YM&output=embed",
+    "address": "Calle Ficción 123, Madrid",
+    "email": "hola@belleza-ym.com"
+  },
+  "nav": [
+    { "label": "Inicio", "href": "/" },
+    { "label": "Servicios", "href": "/servicios" },
+    { "label": "Galería", "href": "/galeria" },
+    { "label": "Contacto", "href": "/contacto" }
+  ],
+  "hero": {
+    "eyebrow": "Peluquería · Estética · Uñas",
+    "title": "Belleza con actitud",
+    "highlight": "fluida y memorable",
+    "description": "Una experiencia premium para trenzas, rastas, uñas y tratamientos. Reserva en segundos y deja que el look hable por ti.",
+    "ctaPrimary": "Reservar cita",
+    "ctaSecondary": "Ver servicios"
+  },
+  "stats": [
+    { "label": "Citas al mes", "value": "+240" },
+    { "label": "Años de estilo", "value": "9" },
+    { "label": "Reviews 5★", "value": "580" }
+  ],
+  "services": [
+    {
+      "title": "Trenzas creativas",
+      "description": "Diseños geométricos y patrones con brillo para un acabado impecable.",
+      "tag": "Top demandado"
+    },
+    {
+      "title": "Rastas & locs",
+      "description": "Montaje, mantenimiento y retoque con textura natural.",
+      "tag": "Look signature"
+    },
+    {
+      "title": "Uñas artísticas",
+      "description": "Gel, minimal, chrome y combinaciones personalizadas.",
+      "tag": "Detalle fino"
+    },
+    {
+      "title": "Botox capilar",
+      "description": "Brillo extremo, sellado de cutícula y control del frizz.",
+      "tag": "Efecto wow"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Explora",
+      "description": "Revisa estilos y elige la vibra que mejor te representa."
+    },
+    {
+      "title": "Reserva",
+      "description": "Agenda por WhatsApp en menos de 60 segundos."
+    },
+    {
+      "title": "Transforma",
+      "description": "Disfruta tu cambio con acabado premium y fotos listas para IG."
+    }
+  ],
+  "prices": [
+    { "name": "Uñas (Gel)", "from": "Desde 25€" },
+    { "name": "Retoque uñas", "from": "Desde 20€" },
+    { "name": "Trenzas", "from": "Desde 30€" },
+    { "name": "Rastas (mantenimiento)", "from": "Desde 35€" },
+    { "name": "Botox capilar", "from": "Desde 45€" }
+  ],
+  "gallery": {
+    "title": "Galería sin fin",
+    "subtitle": "Un stream continuo con inspiración real y looks de alto impacto.",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
+        "alt": "Modelo con trenzas pulidas",
+        "tag": "Trenzas"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1522337094846-8a818192de1c?auto=format&fit=crop&w=900&q=80",
+        "alt": "Peinado con volumen y ondas",
+        "tag": "Peinados"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
+        "alt": "Close-up de manicura nude",
+        "tag": "Uñas"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80",
+        "alt": "Cabello brillante y liso",
+        "tag": "Botox"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
+        "alt": "Trenzas con accesorios dorados",
+        "tag": "Trenzas"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1522337094846-8a818192de1c?auto=format&fit=crop&w=900&q=80",
+        "alt": "Peinado luminoso",
+        "tag": "Peinados"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
+        "alt": "Manicura con detalles"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80",
+        "alt": "Cabello sedoso"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "Andrea M.",
+      "quote": "Salí lista para una sesión de fotos. El acabado es perfecto.",
+      "service": "Trenzas"
+    },
+    {
+      "name": "Belén R.",
+      "quote": "Nunca había tenido unas uñas tan pro, el brillo dura semanas.",
+      "service": "Uñas artísticas"
+    },
+    {
+      "name": "Claudia S.",
+      "quote": "El botox capilar me dejó el cabello suave y súper manejable.",
+      "service": "Botox capilar"
+    }
+  ],
+  "contact": {
+    "hours": [
+      { "day": "Lunes a Viernes", "time": "09:00 - 20:00" },
+      { "day": "Sábados", "time": "10:00 - 18:00" }
+    ],
+    "cta": "Quiero mi cambio"
+  }
+}
