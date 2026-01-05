@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { ArrowRight, Sparkles, Star, Instagram } from "lucide-react";
+import { ArrowRight, Star, Instagram } from "lucide-react";
 import siteContent from "../data/site-content.json";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
@@ -50,8 +50,7 @@ export default function Page() {
           className="absolute right-10 top-32 h-40 w-40 rounded-full bg-[rgba(0,0,0,0.08)] blur-3xl"
         />
 
-        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-[1.1fr,0.9fr] md:py-16">
-          <div>
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-[1.1fr,0.9fr] md:py-16">          <div>
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
@@ -116,31 +115,6 @@ export default function Page() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="glass-panel rounded-[32px] p-6 shadow-xl">
-              <div className="rounded-3xl border border-slate-200 bg-white/90 p-6">
-                <div className="text-sm text-slate-500">{brand.handle}</div>
-                <div
-                  className="mt-3 text-3xl"
-                  style={{ fontFamily: "var(--font-playfair)" }}
-                >
-                  Portfolio en movimiento.
-                </div>
-                <div className="mt-6 space-y-3 text-sm text-slate-600">
-                  <div className="flex items-center gap-2">
-                    <Sparkles className="h-4 w-4" />
-                    Transiciones fluidas en cada sección.
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Sparkles className="h-4 w-4" />
-                    Galería infinita con auto-scroll.
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Sparkles className="h-4 w-4" />
-                    CTA rápido directo a WhatsApp.
-                  </div>
-                </div>
-              </div>
-            </div>
             <div className="absolute -bottom-6 -right-6 h-20 w-20 rounded-full bg-[rgba(216,155,160,0.4)] blur-2xl" />
           </motion.div>
         </div>
