@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root{
+  --bg: 250 247 244;          /* crema */
+  --ink: 22 25 28;            /* casi negro */
+  --muted: 110 116 122;       /* gris texto */
+  --card: 255 255 255;        /* blanco */
+  --line: 229 231 235;        /* borde suave */
+  --brand: 216 155 160;       /* rosa suave */
+  --brand-ink: 120 66 70;     /* rosa oscuro */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body { height: 100%; }
+
+body{
+  background: rgb(var(--bg));
+  color: rgb(var(--ink));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* fondo “soft” tipo foto desenfocada (queda premium incluso sin imagen) */
+.soft-hero{
+  background:
+    radial-gradient(1200px 600px at 20% 20%, rgba(216,155,160,.25), transparent 60%),
+    radial-gradient(900px 520px at 80% 30%, rgba(0,0,0,.06), transparent 55%),
+    linear-gradient(to bottom, rgba(255,255,255,.85), rgba(255,255,255,.92));
 }
