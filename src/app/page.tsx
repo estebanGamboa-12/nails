@@ -1,276 +1,201 @@
-import Link from "next/link";
-import {
-  ArrowRight,
-  Phone,
-  MapPin,
-  Instagram,
-  Sparkles,
-  Scissors,
-  ImageIcon,
-  MessageCircle,
-  Home,
-} from "lucide-react";
+"use client";
 
-const BRAND = {
-  name: "Belleza Estilo YM",
-  subtitle: "Yelle & Maria",
-  handle: "Belleza.Estilo_YM",
-  phonePretty: "+34 123 456 789",
-  phoneE164: "34123456789", // +34 sin "+"
-  instagram: "https://instagram.com/tuusuario",
-  maps: "https://maps.google.com/?q=Peluquer%C3%ADa%20Belleza%20Estilo%20YM",
-};
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowRight, Sparkles, Star, Instagram } from "lucide-react";
+import siteContent from "../data/site-content.json";
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
+import AnimatedSection from "../components/AnimatedSection";
+import Marquee from "../components/Marquee";
+import BottomDock from "../components/BottomDock";
+
+const { brand, hero, stats, services, steps, testimonials, gallery } = siteContent;
 
 function waLink(msg: string) {
-  return `https://wa.me/${BRAND.phoneE164}?text=${encodeURIComponent(msg)}`;
+  return `https://wa.me/${brand.phoneE164}?text=${encodeURIComponent(msg)}`;
 }
 
-const CATEGORIES = [
-  { title: "Rastas", key: "rastas" },
-  { title: "Trenzas", key: "trenzas" },
-  { title: "Botox Capilar", key: "botox" },
-  { title: "Uñas", key: "unas" },
-];
-
-const SERVICES = [
-  { title: "Peinados / Trenzas", desc: "Diseños limpios, acabados finos y cuidado del cabello.", icon: Scissors },
-  { title: "Rastas", desc: "Montaje, mantenimiento y retoques con look natural.", icon: Sparkles },
-  { title: "Botox Capilar", desc: "Brillo, suavidad y control del frizz con tratamiento.", icon: Sparkles },
-  { title: "Uñas", desc: "Manicura, gel, diseños minimal y acabados premium.", icon: Sparkles },
-];
-
-const PRICES = [
-  { name: "Uñas (Gel)", from: "Desde 25€" },
-  { name: "Retoque uñas", from: "Desde 20€" },
-  { name: "Trenzas", from: "Desde 30€" },
-  { name: "Rastas (mantenimiento)", from: "Desde 35€" },
-  { name: "Botox capilar", from: "Desde 45€" },
-];
+const glowVariants = {
+  animate: {
+    y: [0, -12, 0],
+    x: [0, 10, 0],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  }
+};
 
 export default function Page() {
   return (
-    <main id="inicio" className="min-h-screen">
-      {/* TOP NAV */}
-      <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/70 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-          <Link href="#inicio" className="flex items-center gap-3">
-            <div className="leading-tight">
-              <div
-                className="text-2xl md:text-3xl"
-                style={{ fontFamily: "var(--font-script)" }}
-              >
-                {BRAND.name}
-              </div>
-              <div className="text-xs text-slate-500 -mt-1">{BRAND.subtitle}</div>
-            </div>
-          </Link>
+    <main className="min-h-screen">
+      <SiteHeader />
 
-          <nav className="hidden items-center gap-8 text-sm text-slate-600 md:flex">
-            <a className="hover:text-slate-900" href="#inicio">Inicio</a>
-            <a className="hover:text-slate-900" href="#servicios">Servicios</a>
-            <a className="hover:text-slate-900" href="#galeria">Galería</a>
-            <a className="hover:text-slate-900" href="#contacto">Contacto</a>
-          </nav>
+      <section className="relative overflow-hidden border-b border-slate-200/70">
+        <div className="absolute inset-0 gradient-grid opacity-90" />
+        <motion.div
+          variants={glowVariants}
+          animate="animate"
+          className="absolute -left-20 top-10 h-56 w-56 rounded-full bg-[rgba(216,155,160,0.35)] blur-3xl"
+        />
+        <motion.div
+          variants={glowVariants}
+          animate="animate"
+          className="absolute right-10 top-32 h-40 w-40 rounded-full bg-[rgba(0,0,0,0.08)] blur-3xl"
+        />
 
-          <div className="flex items-center gap-2">
-            <a
-              className="hidden md:inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700 shadow-sm hover:shadow transition"
-              href={waLink("Hola! Quiero reservar cita. ¿Tenéis hueco esta semana?")}
-              target="_blank"
-              rel="noreferrer"
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 md:grid-cols-[1.1fr,0.9fr]">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-xs uppercase tracking-[0.32em] text-slate-500"
             >
-              <Phone className="h-4 w-4" />
-              {BRAND.phonePretty}
-            </a>
-
-            <a
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-white shadow-sm hover:shadow transition"
-              style={{ backgroundColor: `rgb(var(--brand))` }}
-              href={waLink("Hola! Quiero reservar cita. ¿Tenéis hueco esta semana?")}
-              target="_blank"
-              rel="noreferrer"
+              {hero.eyebrow}
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="mt-4 text-4xl leading-tight md:text-6xl"
+              style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Reservar cita <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-      </header>
-
-      {/* HERO */}
-      <section className="soft-hero border-b border-slate-200/60">
-        <div className="mx-auto max-w-6xl px-4 py-14 md:py-20">
-          <div className="grid items-center gap-10 md:grid-cols-2">
-            <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-slate-500">
-                Peluquería · Estética · Uñas
-              </div>
-
-              <h1
-                className="mt-3 text-4xl leading-tight md:text-6xl"
-                style={{ fontFamily: "var(--font-playfair)" }}
+              {hero.title} <br />
+              <span className="text-slate-800">{hero.highlight}</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mt-6 text-lg text-slate-600"
+            >
+              {hero.description}
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-8 flex flex-col gap-4 sm:flex-row"
+            >
+              <a
+                className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-rose-200/40 transition hover:-translate-y-0.5"
+                style={{ backgroundColor: "rgb(var(--brand))" }}
+                href={waLink("Hola! Quiero reservar cita. Mi disponibilidad es: ___")}
+                target="_blank"
+                rel="noreferrer"
               >
-                Peluquería <br />
-                <span className="text-slate-800">Yelle &amp; Maria</span>
-              </h1>
-
-              <p className="mt-4 text-lg text-slate-600">
-                <span className="font-medium text-slate-800">{BRAND.handle}</span> — servicios claros,
-                resultados visibles y reserva en 1 clic por WhatsApp.
-              </p>
-
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <a
-                  className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-sm hover:shadow transition"
-                  style={{ backgroundColor: `rgb(var(--brand))` }}
-                  href={waLink("Hola! Quiero reservar cita. Mi disponibilidad es: ___")}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Reservar cita <ArrowRight className="h-4 w-4" />
-                </a>
-
-                <a
-                  className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm hover:shadow transition"
-                  href="#servicios"
-                >
-                  Ver servicios
-                </a>
-              </div>
-
-              <div className="mt-6 text-xs text-slate-500">
-                Respuesta rápida · Precios orientativos · Ubicación y contacto visibles
-              </div>
-            </div>
-
-            {/* “foto” elegante (sin depender de imágenes) */}
-            <div className="relative">
-              <div className="rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-sm">
-                <div className="rounded-2xl border border-slate-200 bg-[rgba(0,0,0,0.02)] p-6">
-                  <div className="text-sm text-slate-500">Tu salón en una portada limpia</div>
-                  <div
-                    className="mt-2 text-3xl md:text-4xl"
-                    style={{ fontFamily: "var(--font-playfair)" }}
-                  >
-                    Minimal, premium y directo a la cita.
-                  </div>
-
-                  <div className="mt-6 grid grid-cols-2 gap-3">
-                    {["Acabados finos", "Galería", "Precios claros", "WhatsApp 1 clic"].map((t) => (
-                      <div
-                        key={t}
-                        className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700"
-                      >
-                        {t}
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-6">
-                    <div className="h-2 w-full rounded-full bg-slate-200/70" />
-                    <div className="mt-2 h-2 w-4/5 rounded-full bg-slate-200/70" />
-                    <div className="mt-2 h-2 w-3/5 rounded-full bg-slate-200/70" />
-                  </div>
+                {hero.ctaPrimary} <ArrowRight className="h-4 w-4" />
+              </a>
+              <Link
+                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm hover:shadow"
+                href="/servicios"
+              >
+                {hero.ctaSecondary}
+              </Link>
+            </motion.div>
+            <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-600">
+              {stats.map((stat) => (
+                <div key={stat.label} className="flex items-center gap-2">
+                  <span className="text-lg font-semibold text-slate-900">{stat.value}</span>
+                  <span>{stat.label}</span>
                 </div>
-              </div>
-
-              <div
-                className="pointer-events-none absolute -right-4 -top-6 h-28 w-28 rounded-full blur-2xl"
-                style={{ background: "rgba(216,155,160,.35)" }}
-              />
-            </div>
-          </div>
-
-          {/* CATEGORIES CIRCLES */}
-          <div className="mt-12 rounded-3xl border border-slate-200 bg-white/70 p-5 shadow-sm">
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-              {CATEGORIES.map((c) => (
-                <a
-                  key={c.key}
-                  href="#servicios"
-                  className="group flex flex-col items-center gap-3 rounded-2xl p-3 hover:bg-white transition"
-                >
-                  <div className="relative">
-                    <div className="h-20 w-20 rounded-full border border-slate-200 bg-white shadow-sm" />
-                    <div
-                      className="absolute inset-2 rounded-full"
-                      style={{
-                        background:
-                          "radial-gradient(circle at 30% 30%, rgba(216,155,160,.35), rgba(0,0,0,.03))",
-                      }}
-                    />
-                  </div>
-                  <div className="text-sm text-slate-700 group-hover:text-slate-900">{c.title}</div>
-                </a>
               ))}
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* SERVICES */}
-      <section id="servicios" className="mx-auto max-w-6xl px-4 py-14">
-        <div className="flex items-end justify-between gap-6">
-          <div>
-            <h2 className="text-3xl md:text-4xl" style={{ fontFamily: "var(--font-playfair)" }}>
-              Servicios
-            </h2>
-            <p className="mt-2 text-slate-600">
-              Todo lo esencial, presentado simple y bonito (como en tu referencia).
-            </p>
-          </div>
-
-          <a
-            className="hidden md:inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:shadow transition"
-            href={waLink("Hola! Me interesa: ___. ¿Precio y disponibilidad?")}
-            target="_blank"
-            rel="noreferrer"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+            className="relative"
           >
-            Consultar por WhatsApp <MessageCircle className="h-4 w-4" />
-          </a>
-        </div>
-
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {SERVICES.map((s) => {
-            const Icon = s.icon;
-            return (
-              <div
-                key={s.title}
-                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-              >
-                <div className="flex items-start gap-4">
-                  <div
-                    className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200"
-                    style={{ background: "rgba(216,155,160,.12)" }}
-                  >
-                    <Icon className="h-5 w-5" style={{ color: "rgb(var(--brand-ink))" }} />
+            <div className="glass-panel rounded-[32px] p-6 shadow-xl">
+              <div className="rounded-3xl border border-slate-200 bg-white/90 p-6">
+                <div className="text-sm text-slate-500">{brand.handle}</div>
+                <div
+                  className="mt-3 text-3xl"
+                  style={{ fontFamily: "var(--font-playfair)" }}
+                >
+                  Portfolio en movimiento.
+                </div>
+                <div className="mt-6 space-y-3 text-sm text-slate-600">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="h-4 w-4" />
+                    Transiciones fluidas en cada sección.
                   </div>
-                  <div>
-                    <div className="text-lg font-semibold">{s.title}</div>
-                    <div className="mt-1 text-sm text-slate-600">{s.desc}</div>
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="h-4 w-4" />
+                    Galería infinita con auto-scroll.
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="h-4 w-4" />
+                    CTA rápido directo a WhatsApp.
                   </div>
                 </div>
               </div>
-            );
-          })}
+            </div>
+            <div className="absolute -bottom-6 -right-6 h-20 w-20 rounded-full bg-[rgba(216,155,160,0.4)] blur-2xl" />
+          </motion.div>
         </div>
       </section>
 
-      {/* GALLERY */}
-      <section id="galeria" className="border-y border-slate-200/70 bg-white/50">
-        <div className="mx-auto max-w-6xl px-4 py-14">
+      <AnimatedSection className="mx-auto max-w-6xl px-4 py-16">
+        <div className="flex items-end justify-between gap-6">
+          <div>
+            <h2 className="text-3xl md:text-4xl" style={{ fontFamily: "var(--font-playfair)" }}>
+              Servicios icónicos
+            </h2>
+            <p className="mt-2 text-slate-600">
+              Cada servicio está pensado para destacar tu estilo con precisión.
+            </p>
+          </div>
+          <Link
+            className="hidden md:inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:shadow"
+            href="/servicios"
+          >
+            Explorar catálogo
+          </Link>
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(15,23,42,0.08)" }}
+            >
+              <div className="flex items-center justify-between">
+                <div className="text-lg font-semibold">{service.title}</div>
+                <span className="rounded-full bg-rose-100 px-3 py-1 text-xs text-rose-700">
+                  {service.tag}
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-slate-600">{service.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection className="border-y border-slate-200/70 bg-white/70 py-16">
+        <div className="mx-auto max-w-6xl px-4">
           <div className="flex items-end justify-between gap-6">
             <div>
               <h2 className="text-3xl md:text-4xl" style={{ fontFamily: "var(--font-playfair)" }}>
-                Galería
+                {gallery.title}
               </h2>
-              <p className="mt-2 text-slate-600">
-                Aquí irían tus fotos reales (uñas, trenzas, antes/después).
-              </p>
+              <p className="mt-2 text-slate-600">{gallery.subtitle}</p>
             </div>
             <a
-              className="hidden md:inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold text-white shadow-sm hover:shadow transition"
-              style={{ backgroundColor: `rgb(var(--brand))` }}
-              href={BRAND.instagram}
+              className="hidden md:inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold text-white shadow-sm"
+              style={{ backgroundColor: "rgb(var(--brand))" }}
+              href={brand.instagram}
               target="_blank"
               rel="noreferrer"
             >
@@ -278,175 +203,96 @@ export default function Page() {
             </a>
           </div>
 
-          {/* placeholders elegantes */}
-          <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div
-                key={i}
-                className="aspect-square rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden"
-              >
-                <div
-                  className="h-full w-full"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 30% 25%, rgba(216,155,160,.28), rgba(0,0,0,.04))",
-                  }}
-                />
-              </div>
-            ))}
+          <div className="marquee-mask mt-8">
+            <Marquee />
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* PRICES */}
-      <section id="precios" className="mx-auto max-w-6xl px-4 py-14">
-        <h2 className="text-3xl md:text-4xl" style={{ fontFamily: "var(--font-playfair)" }}>
-          Precios orientativos
-        </h2>
-        <p className="mt-2 text-slate-600">
-          Transparente, sin líos. (Puedes ajustar cuando quieras.)
-        </p>
-
-        <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="divide-y divide-slate-200">
-            {PRICES.map((p) => (
-              <div key={p.name} className="flex items-center justify-between py-4">
-                <div className="text-slate-800">{p.name}</div>
-                <div className="text-sm font-semibold text-slate-700">{p.from}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
-              className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-sm hover:shadow transition"
-              style={{ backgroundColor: `rgb(var(--brand))` }}
-              href={waLink("Hola! Quiero reservar. Servicio: ___. Día/hora: ___.")}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Reservar cita <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm hover:shadow transition"
-              href="#contacto"
-            >
-              Ubicación y contacto
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section id="contacto" className="border-t border-slate-200/70 bg-white/50">
-        <div className="mx-auto max-w-6xl px-4 py-14">
-          <h2 className="text-3xl md:text-4xl" style={{ fontFamily: "var(--font-playfair)" }}>
-            Contacto
-          </h2>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            <a
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow transition"
-              href={waLink("Hola! Quiero información / reservar cita.")}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="flex items-center gap-3">
-                <div
-                  className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200"
-                  style={{ background: "rgba(216,155,160,.12)" }}
+      <AnimatedSection className="mx-auto max-w-6xl px-4 py-16">
+        <div className="grid gap-8 md:grid-cols-[1.1fr,0.9fr]">
+          <div className="space-y-6">
+            <h2 className="text-3xl md:text-4xl" style={{ fontFamily: "var(--font-playfair)" }}>
+              Ritual creativo en 3 pasos
+            </h2>
+            <p className="text-slate-600">
+              Desde la inspiración hasta el resultado final: todo fluye sin fricciones.
+            </p>
+            <div className="space-y-4">
+              {steps.map((step, index) => (
+                <motion.div
+                  key={step.title}
+                  className="glass-panel rounded-3xl p-5"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <Phone className="h-5 w-5" style={{ color: "rgb(var(--brand-ink))" }} />
-                </div>
-                <div>
-                  <div className="font-semibold">WhatsApp</div>
-                  <div className="text-sm text-slate-600">{BRAND.phonePretty}</div>
-                </div>
-              </div>
-            </a>
-
-            <a
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow transition"
-              href={BRAND.instagram}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="flex items-center gap-3">
-                <div
-                  className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200"
-                  style={{ background: "rgba(216,155,160,.12)" }}
-                >
-                  <Instagram className="h-5 w-5" style={{ color: "rgb(var(--brand-ink))" }} />
-                </div>
-                <div>
-                  <div className="font-semibold">Instagram</div>
-                  <div className="text-sm text-slate-600">@tuusuario</div>
-                </div>
-              </div>
-            </a>
-
-            <a
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow transition"
-              href={BRAND.maps}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="flex items-center gap-3">
-                <div
-                  className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200"
-                  style={{ background: "rgba(216,155,160,.12)" }}
-                >
-                  <MapPin className="h-5 w-5" style={{ color: "rgb(var(--brand-ink))" }} />
-                </div>
-                <div>
-                  <div className="font-semibold">Ubicación</div>
-                  <div className="text-sm text-slate-600">Abrir en Maps</div>
-                </div>
-              </div>
-            </a>
+                  <div className="text-sm uppercase tracking-[0.2em] text-rose-500">
+                    Paso {index + 1}
+                  </div>
+                  <div className="mt-2 text-lg font-semibold">{step.title}</div>
+                  <div className="mt-1 text-sm text-slate-600">{step.description}</div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
-          <footer className="mt-10 text-xs text-slate-500">
-            © {new Date().getFullYear()} {BRAND.name}. Diseño minimalista.
-          </footer>
+          <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="text-sm uppercase tracking-[0.2em] text-slate-500">Clientes felices</div>
+            <div className="mt-4 space-y-4">
+              {testimonials.map((item, index) => (
+                <motion.div
+                  key={item.name}
+                  className="rounded-3xl border border-slate-200 bg-white/90 p-4"
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.6, delay: index * 0.12 }}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm font-semibold">{item.name}</div>
+                    <div className="flex gap-0.5 text-rose-400">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className="h-3 w-3" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="mt-2 text-sm text-slate-600">“{item.quote}”</p>
+                  <div className="mt-2 text-xs text-slate-500">{item.service}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      {/* BOTTOM NAV (móvil tipo app) */}
-      <nav className="fixed bottom-3 left-1/2 z-50 w-[min(520px,calc(100%-24px))] -translate-x-1/2 md:hidden">
-        <div className="rounded-2xl border border-slate-200 bg-white/85 p-2 shadow-lg backdrop-blur">
-          <div className="grid grid-cols-5 text-xs text-slate-600">
-            <a className="flex flex-col items-center gap-1 py-2" href="#inicio">
-              <Home className="h-5 w-5" />
-              Inicio
-            </a>
-            <a className="flex flex-col items-center gap-1 py-2" href="#servicios">
-              <Scissors className="h-5 w-5" />
-              Servicios
-            </a>
-            <a className="flex flex-col items-center gap-1 py-2" href="#galeria">
-              <ImageIcon className="h-5 w-5" />
-              Galería
-            </a>
+      <AnimatedSection className="mx-auto max-w-6xl px-4 pb-16">
+        <div className="rounded-[36px] border border-slate-200 bg-white p-8 shadow-lg">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h2 className="text-3xl md:text-4xl" style={{ fontFamily: "var(--font-playfair)" }}>
+                Lista para tu próximo cambio
+              </h2>
+              <p className="mt-2 text-slate-600">
+                {brand.address} · {brand.phonePretty}
+              </p>
+            </div>
             <a
-              className="flex flex-col items-center gap-1 py-2 font-semibold"
-              style={{ color: "rgb(var(--brand-ink))" }}
-              href={waLink("Hola! Quiero reservar cita.")}
+              className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg"
+              style={{ backgroundColor: "rgb(var(--brand))" }}
+              href={waLink("Hola! Quiero reservar mi próxima cita.")}
               target="_blank"
               rel="noreferrer"
             >
-              <MessageCircle className="h-5 w-5" />
-              Cita
-            </a>
-            <a className="flex flex-col items-center gap-1 py-2" href="#contacto">
-              <MapPin className="h-5 w-5" />
-              Contacto
+              Reservar ahora <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
-      </nav>
+      </AnimatedSection>
 
-      {/* espacio para que el bottom nav no tape contenido */}
+      <SiteFooter />
+      <BottomDock />
       <div className="h-24 md:hidden" />
     </main>
   );
