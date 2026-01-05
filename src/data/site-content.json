@@ -1,15 +1,15 @@
 {
   "brand": {
-    "name": "Belleza Estilo YM",
-    "subtitle": "Yelle & Maria",
-    "handle": "@Belleza.Estilo_YM",
+    "name": "Nails & Braids",
+    "subtitle": "Peluquería · Estética · Uñas",
+    "handle": "@esteban.webdev",
     "phonePretty": "+34 123 456 789",
     "phoneE164": "34123456789",
-    "instagram": "https://instagram.com/tuusuario",
-    "maps": "https://maps.google.com/?q=Peluquer%C3%ADa%20Belleza%20Estilo%20YM",
-    "mapsEmbed": "https://www.google.com/maps?q=Peluquer%C3%ADa%20Belleza%20Estilo%20YM&output=embed",
-    "address": "Calle Ficción 123, Madrid",
-    "email": "hola@belleza-ym.com"
+    "instagram": "https://www.instagram.com/esteban.webdev/",
+    "maps": "https://www.google.com/maps/place/05270+El+Tiemblo,+%C3%81vila/@40.4126913,-4.5208344,14z/data=!3m1!4b1!4m6!3m5!1s0xd4051960470c0b9:0x55888abcc72c6f7e!8m2!3d40.4130828!4d-4.4993148!16s%2Fm%2F02z8y5q?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "mapsEmbed": "https://www.google.com/maps/place/05270+El+Tiemblo,+%C3%81vila/@40.4126913,-4.5208344,14z/data=!3m1!4b1!4m6!3m5!1s0xd4051960470c0b9:0x55888abcc72c6f7e!8m2!3d40.4130828!4d-4.4993148!16s%2Fm%2F02z8y5q?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "address": "Calle Ficción 123, El tiemblo",
+    "email": "nails@gmail.com"
   },
   "nav": [
     { "label": "Inicio", "href": "/" },
