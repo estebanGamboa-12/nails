@@ -3,15 +3,14 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { ArrowRight, Star, Instagram } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import siteContent from "../data/site-content.json";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import AnimatedSection from "../components/AnimatedSection";
-import Marquee from "../components/Marquee";
 import BottomDock from "../components/BottomDock";
 
-const { brand, hero, stats, services, steps, testimonials, gallery } = siteContent;
+const { brand, hero, stats, steps, testimonials } = siteContent;
 
 function waLink(msg: string) {
   return `https://wa.me/${brand.phoneE164}?text=${encodeURIComponent(msg)}`;
@@ -121,73 +120,6 @@ export default function Page() {
       </section>
 
       <AnimatedSection className="mx-auto max-w-6xl px-4 py-16">
-        <div className="flex items-end justify-between gap-6">
-          <div>
-            <h2 className="text-3xl md:text-4xl" style={{ fontFamily: "var(--font-playfair)" }}>
-              Servicios icónicos
-            </h2>
-            <p className="mt-2 text-slate-600">
-              Cada servicio está pensado para destacar tu estilo con precisión.
-            </p>
-          </div>
-          <Link
-            className="hidden md:inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:shadow"
-            href="/servicios"
-          >
-            Explorar catálogo
-          </Link>
-        </div>
-
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(15,23,42,0.08)" }}
-            >
-              <div className="flex items-center justify-between">
-                <div className="text-lg font-semibold">{service.title}</div>
-                <span className="rounded-full bg-rose-100 px-3 py-1 text-xs text-rose-700">
-                  {service.tag}
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-slate-600">{service.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="border-y border-slate-200/70 bg-white/70 py-16">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <h2 className="text-3xl md:text-4xl" style={{ fontFamily: "var(--font-playfair)" }}>
-                {gallery.title}
-              </h2>
-              <p className="mt-2 text-slate-600">{gallery.subtitle}</p>
-            </div>
-            <a
-              className="hidden md:inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold text-white shadow-sm"
-              style={{ backgroundColor: "rgb(var(--brand))" }}
-              href={brand.instagram}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Ver Instagram <Instagram className="h-4 w-4" />
-            </a>
-          </div>
-
-          <div className="marquee-mask mt-8">
-            <Marquee />
-          </div>
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="mx-auto max-w-6xl px-4 py-16">
         <div className="grid gap-8 md:grid-cols-[1.1fr,0.9fr]">
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl" style={{ fontFamily: "var(--font-playfair)" }}>
@@ -241,30 +173,6 @@ export default function Page() {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="mx-auto max-w-6xl px-4 pb-16">
-        <div className="rounded-[36px] border border-slate-200 bg-white p-8 shadow-lg">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div>
-              <h2 className="text-3xl md:text-4xl" style={{ fontFamily: "var(--font-playfair)" }}>
-                Lista para tu próximo cambio
-              </h2>
-              <p className="mt-2 text-slate-600">
-                {brand.address} · {brand.phonePretty}
-              </p>
-            </div>
-            <a
-              className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white shadow-lg"
-              style={{ backgroundColor: "rgb(var(--brand))" }}
-              href={waLink("Hola! Quiero reservar mi próxima cita.")}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Reservar ahora <ArrowRight className="h-4 w-4" />
-            </a>
           </div>
         </div>
       </AnimatedSection>
