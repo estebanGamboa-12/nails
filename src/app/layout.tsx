@@ -7,7 +7,7 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 const parisienne = Parisienne({ subsets: ["latin"], weight: "400", variable: "--font-script" });
 
 export const metadata: Metadata = {
-  title: "Belleza Estilo YM",
+  title: "Nails & Braids",
   description: "Peluquería, estética y uñas",
 };
 
