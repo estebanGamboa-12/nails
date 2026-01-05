@@ -78,42 +78,59 @@
     "subtitle": "Un stream continuo con inspiración real y looks de alto impacto.",
     "images": [
       {
-        "src": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
-        "alt": "Modelo con trenzas pulidas",
-        "tag": "Trenzas"
-      },
-      {
-        "src": "https://images.unsplash.com/photo-1522337094846-8a818192de1c?auto=format&fit=crop&w=900&q=80",
-        "alt": "Peinado con volumen y ondas",
-        "tag": "Peinados"
-      },
-      {
-        "src": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
-        "alt": "Close-up de manicura nude",
+        "src": "https://plus.unsplash.com/premium_photo-1670348051093-a3f94b408bcb?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Manicura con esmalte rosa suave",
         "tag": "Uñas"
       },
       {
-        "src": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80",
-        "alt": "Cabello brillante y liso",
-        "tag": "Botox"
+        "src": "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Uñas rojas con acabado brillante",
+        "tag": "Uñas"
       },
       {
-        "src": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
-        "alt": "Trenzas con accesorios dorados",
-        "tag": "Trenzas"
+        "src": "https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Detalles de nail art en tonos claros",
+        "tag": "Uñas"
       },
       {
-        "src": "https://images.unsplash.com/photo-1522337094846-8a818192de1c?auto=format&fit=crop&w=900&q=80",
-        "alt": "Peinado luminoso",
-        "tag": "Peinados"
+        "src": "https://plus.unsplash.com/premium_photo-1675107358035-fbd55fbfd92a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Manicura neutra con brillo natural",
+        "tag": "Uñas"
       },
       {
-        "src": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
-        "alt": "Manicura con detalles"
+        "src": "https://images.unsplash.com/photo-1612887390768-fb02affea7a6?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Uñas almendradas con esmalte nude",
+        "tag": "Uñas"
       },
       {
-        "src": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80",
-        "alt": "Cabello sedoso"
+        "src": "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Close-up de uñas con esmalte oscuro",
+        "tag": "Uñas"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1630843599725-32ead7671867?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Manicura con detalles en blanco",
+        "tag": "Uñas"
+      },
+      {
+        "src": "https://plus.unsplash.com/premium_photo-1703343320234-4c1a75b3ff13?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Manicura con acabado glossy",
+        "tag": "Uñas"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1587729927069-ef3b7a5ab9b4?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Uñas con acabado natural",
+        "tag": "Uñas"
+      },
+      {
+        "src": "https://plus.unsplash.com/premium_photo-1671719428436-806b92f38a50?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Uñas elegantes en tonos nude",
+        "tag": "Uñas"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "alt": "Manicura artística con brillo",
+        "tag": "Uñas"
       }
     ]
   },
