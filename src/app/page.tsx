@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { ArrowRight, Sparkles, Star, Instagram } from "lucide-react";
 import siteContent from "../data/site-content.json";
 import SiteHeader from "../components/SiteHeader";
@@ -16,6 +17,8 @@ function waLink(msg: string) {
   return `https://wa.me/${brand.phoneE164}?text=${encodeURIComponent(msg)}`;
 }
 
+const EASE: [number, number, number, number] = [0.42, 0, 0.58, 1];
+
 const glowVariants = {
   animate: {
     y: [0, -12, 0],
@@ -23,7 +26,7 @@ const glowVariants = {
     transition: {
       duration: 6,
       repeat: Infinity,
-      ease: "easeInOut"
+      ease: EASE
     }
   }
 };
