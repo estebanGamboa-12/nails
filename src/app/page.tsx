@@ -36,8 +36,9 @@ export default function Page() {
     <main className="min-h-screen">
       <SiteHeader />
 
-      <section className="relative overflow-hidden border-b border-slate-200/70">
-        <div className="absolute inset-0 gradient-grid opacity-90" />
+      <section className="relative overflow-hidden border-b border-slate-200/70 hero-bg">
+        <div className="absolute inset-0 bg-white/70" />
+        <div className="absolute inset-0 gradient-grid opacity-80" />
         <motion.div
           variants={glowVariants}
           animate="animate"
@@ -49,7 +50,7 @@ export default function Page() {
           className="absolute right-10 top-32 h-40 w-40 rounded-full bg-[rgba(0,0,0,0.08)] blur-3xl"
         />
 
-        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 md:grid-cols-[1.1fr,0.9fr]">
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-[1.1fr,0.9fr] md:py-16">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 18 }}
